@@ -7,11 +7,11 @@
 import gspread
 import pandas as pd
 from oauth2client.service_account import ServiceAccountCredentials
+from google_auth_oauthlib.flow import InstalledAppFlow
 
 #provides access to the Google sheets and drive in order to be able to interact and manipulate data
-scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
-# credential_path = 'H:/credentials.json'
-
+scope = ['https://www.googleapis.com/auth/spreadsheets.readonly', 'https://www.googleapis.com/auth/drive']
+# 'https://www.googleapis.com/auth/spreadsheets.readonly' , https://spreadsheets.google.com/feeds
 cred = ServiceAccountCredentials.from_json_keyfile_name('credentials.json', scope)
 
 client = gspread.authorize(cred)
