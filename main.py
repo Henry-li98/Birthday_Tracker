@@ -10,7 +10,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 
 
 #provides access to the Google sheets and drive in order to be able to interact and manipulate data
-scope = ['https://www.googleapis.com/auth/spreadsheets.readonly', 'https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
+scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
 # 'https://www.googleapis.com/auth/spreadsheets.readonly' , https://spreadsheets.google.com/feeds
 cred = ServiceAccountCredentials.from_json_keyfile_name('credentials.json', scope)
 
@@ -18,10 +18,8 @@ client = gspread.authorize(cred)
 
 sheet = client.open("test")
 
-worksheet = sheet.get_worksheet(0)
+worksheet = sheet.worksheet(0)
 
-date = worksheet.get_all_values()
+df = pd.DataFrame(worksheet.get_all_records())
 
-df = pd.DataFrame(data[1:], columns=data[0])
-
-print (df.head())
+print (df)
