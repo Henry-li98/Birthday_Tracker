@@ -22,4 +22,4 @@ sheet = client.open("Birthday_list")
 
 # df = pd.DataFrame(worksheet.get_all_records())
 
-# print (df)
+print ("sheet opened")
