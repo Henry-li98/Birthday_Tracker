@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "birthday-tracker-413619",
+  "private_key_id": "3fe72013cd1243fab0a55f97ea8db405e8ecee86",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC14w2u87yLzuaO\nKzF1+D8ir9efVx4/Kc/mT+PfzxlTW3xTIGG2qDseSv+W2m6XWuiGprIwxL42ItgS\nhl7w4XkL/nMqKr9waHW19bJcsAO10MQr/b2s/0PR19w2LkpJWxWEh7lkMxn0srpc\nwuMZ4yzjH1MLyPPUwPxr+30025VdI2St2aXC4aEtChW2n1YCOPKf9zRYaDL4gEOS\nuVdCP0QFsedRnCi18QFc4KlYHz48kkUtDFNRg+KMRRbYXTVSbGWDtrpdaA2t6fvx\n4J7Dc9/uIUlprr+3Kpx3GmE+x948pBJK4Z3WhEtCq1OGwIVu3jYlxbjL59c5LXiH\nnAAqcft7AgMBAAECggEADFwlEmX6wo9pSHDz9/3KIIvNfcT4R7eKKq70H8HdiTYW\n0TlKmpR9C/ZxvukSCdQCKCBMzJaaDGi6wSuDaSARTzjXz54/Cx72HMrY94Z4ghLx\nOcIQ8SAZljlye/YSU0DOygZFGWOFmITKuEIAF8LByp9Wz960fxksLhRVclGXqVAA\nQbJJTlV5n3CU9l4gq8VOfKqAN1KTGAIeH35Q6bfDciMyZFOpVGnrE8SIUTbKVOvx\nq5e3iZQpuN0IEgL5MKSpSxoggQdRsvQDLh6HqP1QOSlxBHvkdAOa8tZZINBJKWnD\nR3vGCmJB/9QYi/QMxNstyacsBz/7jNwZ0//6f46pAQKBgQD6OiSxoh+88JJd0dUv\nlomq7XXJHAfYl1S+fStpyWDLWsRdQAX9C5j0U8CnGqrLPn1ZY2dnHTaul3CH75EV\nb2GvNhJSfHsrPcpkjmkSRVaLMCgweLy5aXVSzheP3qZEelu/7Vf6dRS/elJiXg/m\nfC5BlcFhc3RnppLoEGdqMr33AQKBgQC6FUnrnROiew4DUGvRhjbeC5rN6lTj2Fk9\nbOc0M+/Zu7RmUB/6Daj8wd5jHP/mZ+ur+sUTrZQ0rGMl+M3HrDYzmc/FQCfoBuOK\n9vS6/sNFmMWrLpJ935FOO79r0p0EjPiyZ7WGZnLFk6FR9RCTZjsc9DZBMLrImA5S\n9AMJIepOewKBgQCFmmXdMmMfzpNX5KGfNxFqYj9xkbXev25QByUW5p739Q7De1u3\nMGoKim1iy6pFuqfTAnBDbiW0MseyzQb6Gu5dTtGZmT1qaSOXbTJMvxjmWGAdAVpC\n5TvvanrKJmdASNSUNXW0FK9vTTCPtQloVwWbnwoRrkOI1De8EIYm/dDQAQKBgA03\nm+OHabCdyvYDTVU5kkYdTuaXYWY5pMUPKjD0C3JMudiWkl7hf4JMhu5FTgvgj8XM\nbxkhuCgxom09CejH26W4pCBfmTYK3zisp99sXxRfcJLjIPad3aVP6x3OfOao2LVb\nVnJwbnCINuoqXP4LQeGhmwTwYCQFYOcVe+23IfxnAoGBALgu5nhqUmxnYy54oqXn\n1wbPFFdgBom881oR48PgvPe9hzyVQiw9cs4+l79nd4SMFthe96PJJy3nD3MBRzr0\nYVF81iQejYM2SHWEguaXPk/iLHi2RPDH7GqAq6t1ai5sI0L8NzbVfrBykOgiqwtO\n41+Ic3FTzWCxEVqXo7Cr4z9u\n-----END PRIVATE KEY-----\n",
+  "client_email": "google-sheet-access@birthday-tracker-413619.iam.gserviceaccount.com",
+  "client_id": "113203855063576598309",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/google-sheet-access%40birthday-tracker-413619.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

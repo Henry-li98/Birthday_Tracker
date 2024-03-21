@@ -16,7 +16,7 @@ cred = ServiceAccountCredentials.from_json_keyfile_name('credentials.json', scop
 
 client = gspread.authorize(cred)
 
-sheet = client.open("test")
+sheet = client.open("Birthday_list")
 
 worksheet = sheet.worksheet(0)
 
