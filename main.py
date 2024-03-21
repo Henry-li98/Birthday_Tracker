@@ -18,8 +18,8 @@ client = gspread.authorize(cred)
 
 sheet = client.open("Birthday_list")
 
-worksheet = sheet.worksheet(0)
+# worksheet = sheet.worksheet(0)
 
-df = pd.DataFrame(worksheet.get_all_records())
+# df = pd.DataFrame(worksheet.get_all_records())
 
-print (df)
+# print (df)
