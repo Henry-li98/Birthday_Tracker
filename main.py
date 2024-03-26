@@ -26,11 +26,14 @@ print(df)
 while True:
     response = input("Here is the current list, is there more names that need to be added? (yes/no): ").lower()
         if response == 'no':
-        break
-        print("no additional data added")
-    elif response == 'yes':
-    user_input = input("enter name of the person ")
-    user_input2 = input("enter the birthday date (MM/DD) ")
+            break
+            print("no additional data added")
+        elif response == 'yes':
+            user_input = input("enter name of the person ")
+            user_input2 = input("enter the birthday date (MM/DD) ")
+        else:
+            print("invalid input, type in yes or no")
+
 # creating user input as an option to add more names and dates
 
 
