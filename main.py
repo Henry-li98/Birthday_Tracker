@@ -23,6 +23,9 @@ worksheet = sheet.worksheet('Sheet1')
 df = pd.DataFrame(worksheet.get_all_records())
 
 print (df)
+print('Here is the current list')
+# creating user input as an option to add more names and dates
+
 
 # figure out how to add to the data frames and link both name and date together so when they get changed its moved together
 # learn how to use bubblesort to organize the cells that are attached via names and dates and order them sequentially
