@@ -23,3 +23,42 @@ worksheet = sheet.worksheet('Sheet1')
 df = pd.DataFrame(worksheet.get_all_records())
 
 print (df)
+
+# figure out how to add to the data frames
+# learn how to use bubblesort to organize the cells that are attached via names and dates and order them sequentially
+#find a module that can access the windows OS notifications feature
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#first error was forgetting to go into the google sheets itself and give it editor powers to service account
