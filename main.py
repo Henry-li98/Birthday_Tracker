@@ -22,8 +22,15 @@ worksheet = sheet.worksheet('Sheet1')
 
 df = pd.DataFrame(worksheet.get_all_records())
 
-print (df)
-print('Here is the current list')
+print(df)
+while True:
+    response = input("Here is the current list, is there more names that need to be added? (yes/no): ").lower()
+        if response == 'no':
+        break
+        print("no additional data added")
+    elif response == 'yes':
+    user_input = input("enter name of the person ")
+    user_input2 = input("enter the birthday date (MM/DD) ")
 # creating user input as an option to add more names and dates
 
 
