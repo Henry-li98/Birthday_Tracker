@@ -26,6 +26,8 @@ print (df)
 
 # figure out how to add to the data frames and link both name and date together so when they get changed its moved together
 # learn how to use bubblesort to organize the cells that are attached via names and dates and order them sequentially
+
+
 # test adding then sorting the names
 # find a module that can access the windows OS notifications feature
 
