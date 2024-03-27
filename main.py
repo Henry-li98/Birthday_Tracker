@@ -39,11 +39,11 @@ while True:
         Birthday = input("enter the birthday date (MM/DD) ")
         birthday_list = df.to_dict(orient='records')
         print(birthday_list)
-        print("names added: " + (Name))
+        print("name added: " + (Name))
         print("birthday added: " + (Birthday))
 
         new_row = {Name, Birthday}
-        df.loc[len(df)] = new_row
+        # df.loc[len(df)] = new_row
         df = df.append(new_row, ignore_index=True)
 
 
