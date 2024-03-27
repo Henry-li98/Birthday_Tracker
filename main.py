@@ -42,7 +42,7 @@ while True:
         print("name added: " + (Name))
         print("birthday added: " + (Birthday))
 #new entry to be added
-        new_row = {Name, Birthday}
+        new_row = {'Name': Name, 'Birthday': Birthday}
 #locating where this entry is to be added
         new_index = df.index[-1] + 1
 # adding the new entry to the location
