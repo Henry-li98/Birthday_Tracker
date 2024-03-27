@@ -32,7 +32,7 @@ while True:
         name = input("enter name of the person ")
         date = input("enter the birthday date (MM/DD) ")
         new_row = {name, date}
-        df.loc[len(df] = new_row
+        df.loc[len(df)] = new_row
         df = df.append(new_row, ignore_index=True)
     else:
         print("invalid input, type in yes or no")
