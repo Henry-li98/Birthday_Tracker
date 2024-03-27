@@ -38,16 +38,18 @@ while True:
         Name = input("enter name of the person ")
         Birthday = input("enter the birthday date (MM/DD) ")
         birthday_list = df.to_dict(orient='records')
-        # print(birthday_list)
+        print(birthday_list)
         print("name added: " + (Name))
         print("birthday added: " + (Birthday))
 #new entry to be added
         new_row = {'Name': Name, 'Birthday': Birthday}
 #locating where this entry is to be added
-        new_index = df.index[-1] + 1
+        # new_index = df.index[-1] + 1
 # adding the new entry to the location
-        df = df.append(new_index, ignore_index=True)
+        birthday_list.append(new_row)
+        df_updated = pd.DataFrame(birthday_list)
 
+#ran through but didnt update the birthday list
 
     else:
         print("invalid input, type in yes or no")
