@@ -38,13 +38,15 @@ while True:
         Name = input("enter name of the person ")
         Birthday = input("enter the birthday date (MM/DD) ")
         birthday_list = df.to_dict(orient='records')
-        print(birthday_list)
+        # print(birthday_list)
         print("name added: " + (Name))
         print("birthday added: " + (Birthday))
-
+#new entry to be added
         new_row = {Name, Birthday}
-        # df.loc[len(df)] = new_row
-        df = df.append(new_row, ignore_index=True)
+#locating where this entry is to be added
+        new_index = df.index[-1] + 1
+# adding the new entry to the location
+        df = df.append(new_index, ignore_index=True)
 
 
     else:
@@ -93,7 +95,7 @@ print(df)
 
 
 
+#list of problems that lasted way too much time
 
-
-
-#first error was forgetting to go into the google sheets itself and give it editor powers to service account
+#forgetting to go into the google sheets itself and give it editor powers to service account
+#
