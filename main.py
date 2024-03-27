@@ -11,7 +11,6 @@ from oauth2client.service_account import ServiceAccountCredentials
 
 #provides access to the Google sheets and drive in order to be able to interact and manipulate data
 scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
-# 'https://www.googleapis.com/auth/spreadsheets.readonly' , https://spreadsheets.google.com/feeds
 cred = ServiceAccountCredentials.from_json_keyfile_name('Sheet_access.json', scope)
 
 client = gspread.authorize(cred)
@@ -24,8 +23,9 @@ worksheet = sheet.worksheet('Sheet1')
 df = pd.DataFrame(worksheet.get_all_records())
 # changes entire list into a dictionary list that is now sorted and in a list that can be edited
 birthday_list = df.to_dict(orient='records')
-print(df)
-
+# print(df)
+for i in range(len(birthday_list))
+    print(birthday_list[i])
 
 # while True:
 #     response = input("Here is the current list, is there more names that need to be added? (yes/no): ").lower()
