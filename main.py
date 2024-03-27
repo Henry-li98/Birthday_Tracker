@@ -24,7 +24,7 @@ df = pd.DataFrame(worksheet.get_all_records())
 # changes entire list into a dictionary list that is now sorted and in a list that can be edited
 birthday_list = df.to_dict(orient='records')
 # print(df)
-for i in range(len(birthday_list))
+for i in range(len(birthday_list)):
     print(birthday_list[i])
 
 # while True:
