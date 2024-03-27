@@ -29,11 +29,17 @@ while True:
         break
         print("no additional data added")
     elif response == 'yes':
-        user_input = input("enter name of the person ")
-        user_input2 = input("enter the birthday date (MM/DD) ")
+        name = input("enter name of the person ")
+        date = input("enter the birthday date (MM/DD) ")
+        new_row = {name, date}
+        df.loc[len(df] = new_row
+        df = df.append(new_row, ignore_index=True)
     else:
         print("invalid input, type in yes or no")
 
+print(user_input)
+print(user_input2)
+df = pd.DataFrame(worksheet.get_all_records())
 # creating user input as an option to add more names and dates
 
 
