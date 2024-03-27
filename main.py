@@ -22,11 +22,12 @@ worksheet = sheet.worksheet('Sheet1')
 
 df = pd.DataFrame(worksheet.get_all_records())
 # changes entire list into a dictionary list that is now sorted and in a list that can be edited
-birthday_list = df.to_dict(orient='records')
-# print(df)
+
 # used to test if the listed items within the excel sheet actually become a dictionary list to be edited
 # for i in range(len(birthday_list)):
 #     print(birthday_list[i])
+
+print(df)
 
 while True:
     response = input("Here is the current list, is there more names that need to be added? (yes/no): ").lower()
@@ -36,15 +37,22 @@ while True:
     elif response == 'yes':
         Name = input("enter name of the person ")
         Birthday = input("enter the birthday date (MM/DD) ")
+        birthday_list = df.to_dict(orient='records')
+        print(birthday_list)
+        print("names added: " + (Name))
+        print("birthday added: " + (Birthday))
+
         new_row = {Name, Birthday}
         df.loc[len(df)] = new_row
         df = df.append(new_row, ignore_index=True)
+
+
     else:
         print("invalid input, type in yes or no")
 
-print(user_input)
-print(user_input2)
 df = pd.DataFrame(worksheet.get_all_records())
+
+print(df)
 # creating user input as an option to add more names and dates
 
 
