@@ -45,12 +45,12 @@ while True:
 
 #new entry to be added
         new_row = Name, Birthday
-        last_index =df.iloc[-1]
+        last_index =df.index[-1]
         new_index = last_index + 1
-        df.iloc(new_index) == new_row
+        df.loc(new_index) = new_row
 
         print(df)
-
+# find out how to make a new index and input the information into it
 
     else:
         print("invalid input, type in yes or no")
