@@ -51,6 +51,8 @@ while True:
         print(df)
 
 # find out why its not setting it into a mm/dd format and in the cell it adds a ' to the numbering
+# best method is to have a standard year across all birthdays for the algorithm usage and then only use the day month in order to sort the out
+# will have to install the datetime library
 
     else:
         print("invalid input, type in yes or no")
