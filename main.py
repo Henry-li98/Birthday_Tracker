@@ -45,13 +45,17 @@ while True:
 
 #new entry to be added
         new_row = Name, Birthday
-        df.iloc[0] = new_row
-        df.update(new_row)
+        last_index =df.iloc[-1]
+        new_index = last_index + 1
+        df.iloc(new_index) == new_row
+
         print(df)
+
 
     else:
         print("invalid input, type in yes or no")
 
+worksheet.append_row(new_row)
 
 print(df)
 # creating user input as an option to add more names and dates
@@ -63,13 +67,6 @@ print(df)
 
 # test adding then sorting the names
 # find a module that can access the windows OS notifications feature
-
-
-
-
-
-
-
 
 
 
