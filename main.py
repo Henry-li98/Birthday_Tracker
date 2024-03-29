@@ -6,7 +6,7 @@
 
 import gspread
 import pandas as pd
-import df2gspread
+from df2gspread import df2gspread as d2g
 from oauth2client.service_account import ServiceAccountCredentials
 
 
@@ -41,18 +41,19 @@ while True:
         # birthday_list = df.to_dict(orient='records')
 
         # print(birthday_list)
-        print("name added: " + (Name) + "birthday added: " + (Birthday))
+        print("name added: " + (Name) + " birthday added: " + (Birthday))
 
-        new_row = {'Name': Name, 'Birthday': Birthday}
 #new entry to be added
 
         df.iloc[-1] = Name, Birthday
-        print(df)
+        new_row = df.iloc[-1]
+        # print("here is the last row entry")
+        # print(df.iloc[-1])
 
     else:
         print("invalid input, type in yes or no")
 
-birthday_list.update("Birthday_list")
+worksheet.append_row(new_row)
 
 print(df)
 # creating user input as an option to add more names and dates
