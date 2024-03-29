@@ -44,16 +44,16 @@ while True:
         print("name added: " + (Name) + " birthday added: " + (Birthday))
 
 #new entry to be added
-
-        df.iloc[-1] = Name, Birthday
         new_row = df.iloc[-1]
+        df.iloc[-1] = Name, Birthday
+        df.update(new_row)
+        print(df)
         # print("here is the last row entry")
         # print(df.iloc[-1])
 
     else:
         print("invalid input, type in yes or no")
 
-worksheet.append_row(new_row)
 
 print(df)
 # creating user input as an option to add more names and dates
