@@ -6,6 +6,7 @@
 
 import gspread
 import pandas as pd
+import df2gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
 
@@ -37,25 +38,21 @@ while True:
     elif response == 'yes':
         Name = input("enter name of the person ")
         Birthday = input("enter the birthday date (MM/DD) ")
-        birthday_list = df.to_dict(orient='records')
+        # birthday_list = df.to_dict(orient='records')
 
-        print(birthday_list)
-        print("name added: " + (Name))
-        print("birthday added: " + (Birthday))
-#new entry to be added
+        # print(birthday_list)
+        print("name added: " + (Name) + "birthday added: " + (Birthday))
+
         new_row = {'Name': Name, 'Birthday': Birthday}
-# adding the new entry to the location
-        birthday_list.append(new_row)
-        print(df)
-        df = df.append(new_row)
-        print(df)
+#new entry to be added
 
+        df.iloc[-1] = Name, Birthday
+        print(df)
 
     else:
         print("invalid input, type in yes or no")
 
-
-df = pd.DataFrame(worksheet.get_all_records())
+birthday_list.update("Birthday_list")
 
 print(df)
 # creating user input as an option to add more names and dates
