@@ -44,13 +44,11 @@ while True:
         print("name added: " + (Name) + " birthday added: " + (Birthday))
 
 #new entry to be added
-        new_row = df.iloc[-1]
+        new_row = df.iloc[-1] + 1
         df.iloc[-1] = Name, Birthday
         df.update(new_row)
         print(df)
-        # print("here is the last row entry")
-        # print(df.iloc[-1])
-
+        print("here is the latest entry " + new_row)
     else:
         print("invalid input, type in yes or no")
 
