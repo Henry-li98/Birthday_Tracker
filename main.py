@@ -45,19 +45,15 @@ while True:
 #new entry to be added
         new_row = {'Name': Name, 'Birthday': Birthday}
 # adding the new entry to the location
-#         birthday_list.append(new_row)
-        df = birthday_list.append(new_row)
+        birthday_list.append(new_row)
+        print(df)
+        df = df.append(new_row)
+        print(df)
 
-        # updated_list = df.to_dict(orient='records')
-        # worksheet.update([df.columns.values.tolist()] + df.values.tolist())
-
-
-
-
-#ran through but didnt update the birthday list
 
     else:
         print("invalid input, type in yes or no")
+
 
 df = pd.DataFrame(worksheet.get_all_records())
 
