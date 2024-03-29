@@ -46,16 +46,15 @@ while True:
 #new entry to be added
         new_row = Name, Birthday
         last_index =df.index[-1]
-        new_index = last_index + 1
-        df.loc(new_index) = new_row
-
+        print(last_index)
+        worksheet.append_row(new_row)
         print(df)
-# find out how to make a new index and input the information into it
+
 
     else:
         print("invalid input, type in yes or no")
 
-worksheet.append_row(new_row)
+# worksheet.append_row(new_row)
 
 print(df)
 # creating user input as an option to add more names and dates
