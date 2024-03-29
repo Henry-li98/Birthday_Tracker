@@ -46,10 +46,11 @@ while True:
 #new entry to be added
         new_row = Name, Birthday
         last_index =df.index[-1]
-        print(last_index)
+        # print(last_index)
         worksheet.append_row(new_row)
         print(df)
 
+# find out why its not setting it into a mm/dd format and in the cell it adds a ' to the numbering
 
     else:
         print("invalid input, type in yes or no")
