@@ -8,7 +8,7 @@ import gspread
 import pandas as pd
 from df2gspread import df2gspread as d2g
 from oauth2client.service_account import ServiceAccountCredentials
-import datetime as datetime
+from datetime import datetime
 
 
 #provides access to the Google sheets and drive in order to be able to interact and manipulate data
@@ -39,6 +39,7 @@ while True:
     elif response == 'yes':
         Name = input("enter name of the person ")
         Birthday = input("enter the birthday date (MM/DD) ")
+        month,day = birthday.split('/')
         # birthday_list = df.to_dict(orient='records')
 
         # print(birthday_list)
