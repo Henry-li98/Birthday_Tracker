@@ -8,6 +8,7 @@ import gspread
 import pandas as pd
 from df2gspread import df2gspread as d2g
 from oauth2client.service_account import ServiceAccountCredentials
+import datetime as datetime
 
 
 #provides access to the Google sheets and drive in order to be able to interact and manipulate data
