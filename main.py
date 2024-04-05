@@ -43,7 +43,7 @@ while True:
         # birthday_list = df.to_dict(orient='records')
         print(month)
         print(day)
-        # print(birthday_list)
+        # append a constant year to the new ones
         print("name added: " + (Name) + " birthday added: " + (Birthday))
 
 #new entry to be added
