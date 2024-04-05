@@ -39,9 +39,10 @@ while True:
     elif response == 'yes':
         Name = input("enter name of the person ")
         Birthday = input("enter the birthday date (MM/DD) ")
-        month,day = birthday.split('/')
+        month,day = Birthday.split('/')
         # birthday_list = df.to_dict(orient='records')
-
+        print(month)
+        print(day)
         # print(birthday_list)
         print("name added: " + (Name) + " birthday added: " + (Birthday))
 
