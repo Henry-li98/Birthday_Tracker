@@ -45,7 +45,8 @@ while True:
         print(day)
         # append a constant year to the new ones
         year = 2020
-        complete_birthday = f"{month}/{day}/{year}"
+        adding_year = f"{month}/{day}/{year}"
+        complete_birthday = datetime.strptime(adding_year, "%m/%d/%Y")
         print("name added: " + (Name) + " birthday added: " + (Birthday))
 
 #new entry to be added
