@@ -44,16 +44,17 @@ while True:
         print(month)
         print(day)
         # append a constant year to the new ones
+        year = 2020
+        complete_birthday = f"{month}/{day}/{year}"
         print("name added: " + (Name) + " birthday added: " + (Birthday))
 
 #new entry to be added
-        new_row = Name, Birthday
+        new_row = Name, complete_birthday
         last_index =df.index[-1]
         # print(last_index)
         worksheet.append_row(new_row)
         print(df)
 
-# find out why its not setting it into a mm/dd format and in the cell it adds a ' to the numbering
 # best method is to have a standard year across all birthdays for the algorithm usage and then only use the day month in order to sort the out
 # will have to install the datetime library
 
