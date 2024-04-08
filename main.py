@@ -48,11 +48,12 @@ while True:
         adding_year = f"{month}/{day}/{year}"
         complete_birthday = datetime.strptime(adding_year, "%m/%d/%Y")
         print("name added: " + (Name) + " birthday added: " + (Birthday))
+        print(complete_birthday)
+        #prints 2020-02-22 00:00:00
 
 #new entry to be added
         new_row = Name, complete_birthday
         last_index =df.index[-1]
-        # print(last_index)
         worksheet.append_row(new_row)
         print(df)
 
