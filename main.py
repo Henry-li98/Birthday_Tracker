@@ -58,6 +58,10 @@ while True:
         print(df)
     else:
         print("invalid input, type in yes or no")
+
+print("sorting months by alphabetical order")
+for i in index , i++
+    #learn to use bubble sort for this
 # figure out how to add to the data frames and link both name and date together so when they get changed its moved together
 # learn how to use bubblesort to organize the cells that are attached via names and dates and order them sequentially
 
