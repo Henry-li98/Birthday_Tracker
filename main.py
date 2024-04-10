@@ -48,9 +48,9 @@ while True:
         adding_year = f"{month}/{day}/{year}"
         complete_birthday = datetime.strptime(adding_year, "%m/%d/%Y")
         bday = complete_birthday.date()
-        print("name added: " + (Name) + " birthday added: " + (Birthday))
-        print(complete_birthday)
-        print(adding_year)
+        # # print("name added: " + (Name) + " birthday added: " + (Birthday))
+        # print(complete_birthday)
+        print(bday)
         #prints 2020-02-22 00:00:00
 
 #new entry to be added
