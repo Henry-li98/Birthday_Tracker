@@ -52,10 +52,7 @@ while True:
         print(complete_birthday)   #prints 2020-02-22 00:00:00
         print(bday)                #prints 2020-02-22
 
-
-#new entry to be added
-#adding_year works but leaves a ' infront of the date
-        new_row = Name, adding_year
+        new_row = Name, (adding_year)
         last_index =df.index[-1]
         worksheet.append_row(new_row)
         print(df)
