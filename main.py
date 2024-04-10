@@ -52,23 +52,12 @@ while True:
         print(complete_birthday)   #prints 2020-02-22 00:00:00
         print(bday)                #prints 2020-02-22
 
-        new_row = Name, (adding_year)
+        new_row = Name, adding_year
         last_index =df.index[-1]
         worksheet.append_row(new_row)
         print(df)
-
-# best method is to have a standard year across all birthdays for the algorithm usage and then only use the day month in order to sort the out
-# will have to install the datetime library
-
     else:
         print("invalid input, type in yes or no")
-
-# worksheet.append_row(new_row)
-
-print(df)
-# creating user input as an option to add more names and dates
-
-
 # figure out how to add to the data frames and link both name and date together so when they get changed its moved together
 # learn how to use bubblesort to organize the cells that are attached via names and dates and order them sequentially
 
