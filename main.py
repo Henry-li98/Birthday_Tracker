@@ -61,7 +61,10 @@ while True:
 
 print("sorting months by alphabetical order")
 
-def bubblesort(df.index)
+def bubblesort(df.index):
+    n = len(df.index)
+    for i in range(n-1):
+
 
 # learn to use bubble sort for this
 # figure out how to add to the data frames and link both name and date together so when they get changed its moved together
