@@ -59,8 +59,13 @@ while True:
     else:
         print("invalid input, type in yes or no")
 
-print("sorting months by alphabetical order")
+# figure out how to get index of the df
+# compare only the month and day MM/DD and have it be able ot organize both columns
+birthday_dates = df.get_loc(columns[1])
 
+
+print("sorting months by alphabetical order")
+organized = bubblesort()
 def bubblesort():
     n = len(df.index)
     print(n)
@@ -74,7 +79,7 @@ def bubblesort():
                 break
     return(sorted)
 
-organized = bubblesort(df)
+organized = bubblesort()
 
 # learn to use bubble sort for this
 # figure out how to add to the data frames and link both name and date together so when they get changed its moved together
