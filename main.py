@@ -72,7 +72,9 @@ def bubblesort():
                 swapped = True
             if swapped == False:
                 break
+    return(sorted)
 
+organized = bubblesort(df)
 
 # learn to use bubble sort for this
 # figure out how to add to the data frames and link both name and date together so when they get changed its moved together
