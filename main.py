@@ -62,26 +62,26 @@ while True:
 # figure out how to get index of the df - does not have be focuesd on  either column as each should both have the same index value
 # compare only the month and day MM/DD and have it be able ot organize both columns
 
-birthday_dates = df.get_loc(columns[1])
-index_list = df.index
+# birthday_dates = df.get_loc(columns[1])
+index_list = df.index(stop)
 print(index_list)
 
 print("sorting months by alphabetical order")
-organized = bubblesort()
-def bubblesort():
-    n = len(df.index)
-    print(n)
-    for i in range(n-1):
-        swapped = False
-        for j in range(0, n-1-i):
-            if arr[j] > arr[j+1]:
-                arr[j], arr[j+1] = arr[j+1], arr[j]
-                swapped = True
-            if swapped == False:
-                break
-    return(sorted)
+# organized = bubblesort()
+# def bubblesort():
+#     n = len(df.index)
+#     print(n)
+#     for i in range(n-1):
+#         swapped = False
+#         for j in range(0, n-1-i):
+#             if arr[j] > arr[j+1]:
+#                 arr[j], arr[j+1] = arr[j+1], arr[j]
+#                 swapped = True
+#             if swapped == False:
+#                 break
+#     return(sorted)
 
-organized = bubblesort()
+# organized = bubblesort()
 
 # learn to use bubble sort for this
 # figure out how to add to the data frames and link both name and date together so when they get changed its moved together
