@@ -63,11 +63,14 @@ while True:
 # compare only the month and day MM/DD and have it be able ot organize both columns
 
 # birthday_dates = df.get_loc(columns[1])
-index_list = df.index.stop
-print(index_list)
-
-print("sorting months by alphabetical order")
-# organized = bubblesort()
+# the index number of all the entries
+# index_list = df.index.stop
+# print(index_list)
+# n = len(df.index)
+# print(n)
+# print("sorting months by alphabetical order")
+second_column = df.iloc[:, 1]
+print(second_column)
 # def bubblesort():
 #     n = len(df.index)
 #     print(n)
