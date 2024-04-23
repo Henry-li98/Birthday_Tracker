@@ -72,6 +72,7 @@ while True:
 # print("sorting months by alphabetical order")
 second_column = df.iloc[:, 1]
 print(second_column)
+print(" regex extraction ")
 date = df["Birthday"].str.extract(r"(\d+/\d*)")
 print(date)
 # def bubblesort():
