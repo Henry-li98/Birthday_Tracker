@@ -6,6 +6,7 @@
 
 import gspread
 import pandas as pd
+import re
 from df2gspread import df2gspread as d2g
 from oauth2client.service_account import ServiceAccountCredentials
 from datetime import datetime
@@ -71,6 +72,7 @@ while True:
 # print("sorting months by alphabetical order")
 second_column = df.iloc[:, 1]
 print(second_column)
+date = df
 # def bubblesort():
 #     n = len(df.index)
 #     print(n)
