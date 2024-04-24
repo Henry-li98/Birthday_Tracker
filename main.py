@@ -22,13 +22,7 @@ sheet = client.open("Birthday_list")
 
 worksheet = sheet.worksheet('Sheet1')
 
-
 df = pd.DataFrame(worksheet.get_all_records())
-# changes entire list into a dictionary list that is now sorted and in a list that can be edited
-
-# used to test if the listed items within the excel sheet actually become a dictionary list to be edited
-# for i in range(len(birthday_list)):
-#     print(birthday_list[i])
 
 print(df)
 
@@ -60,6 +54,35 @@ while True:
     else:
         print("invalid input, type in yes or no")
 
+
+sorted_rows = df.sort_values(by='Birthday')
+print(sorted_rows)
+worksheet = sorted_rows
+print (worksheet)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# changes entire list into a dictionary list that is now sorted and in a list that can be edited
+
+# used to test if the listed items within the excel sheet actually become a dictionary list to be edited
+# for i in range(len(birthday_list)):
+#     print(birthday_list[i])
+
+
+
 # figure out how to get index of the df - does not have be focuesd on  either column as each should both have the same index value
 # compare only the month and day MM/DD and have it be able ot organize both columns
 
@@ -76,8 +99,11 @@ while True:
 # date = df["Birthday"].str.extract(r"(\d+/\d*)")
 # print(date)
 
-sorted_rows = df.sort_values(by='Birthday')
-print(sorted_rows)
+
+
+
+
+
 
 # def bubblesort():
 #     n = len(df.index)
@@ -101,31 +127,3 @@ print(sorted_rows)
 
 # test adding then sorting the names
 # find a module that can access the windows OS notifications feature
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#list of problems that lasted way too much time
-
-#forgetting to go into the google sheets itself and give it editor powers to service account
-#
