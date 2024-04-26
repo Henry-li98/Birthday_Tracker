@@ -57,8 +57,9 @@ while True:
 
 sorted_rows = df.sort_values(by='Birthday')
 print(sorted_rows)
-worksheet = sorted_rows
-print (worksheet)
+df = sorted_rows
+print("new dataframe that will be inside google sheets")
+print(worksheet)
 
 
 
