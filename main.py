@@ -56,7 +56,7 @@ while True:
 
 
 sorted_rows = df.sort_values(by='Birthday')
-df = worksheet(sorted_rows)
+df = pd.DataFrame(sorted_rows)
 print("here is the new dataframe")
 print(worksheet)
 
