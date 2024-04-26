@@ -55,8 +55,8 @@ while True:
         print("invalid input, type in yes or no")
 
 
-sorted_rows = df.sort_values(by='Birthday')
-df = pd.DataFrame(sorted_rows)
+worksheet = worksheet.sort_values(by='Birthday')
+# df = pd.DataFrame(sorted_rows)
 print("here is the new dataframe")
 print(worksheet)
 
