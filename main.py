@@ -55,8 +55,8 @@ while True:
         print("invalid input, type in yes or no")
 
 
-worksheet = df.sort_values(by='Birthday')
-
+organized = df.sort_values(by='Birthday')
+oragnized.to_csv("Birthday_List", index=False)
 print("here is the new sorted dataframe")
 print(worksheet)
 
