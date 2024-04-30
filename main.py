@@ -24,14 +24,15 @@ worksheet = sheet.worksheet('Sheet1')
 
 df = pd.DataFrame(worksheet.get_all_records())
 
-print(df)
 
 while True:
+    print(df)
     response = input("Here is the current list, is there more names that need to be added? (yes/no): ").lower()
     if response == 'no':
         break
         print("no additional data added")
     elif response == 'yes':
+
         Name = input("enter name of the person ")
         Birthday = input("enter the birthday date (MM/DD) ")
         month,day = Birthday.split('/')
@@ -41,7 +42,7 @@ while True:
         # append a constant year to the new ones
         year = 2020
         adding_year = f"{month}/{day}/{year}"
-        complete_birthday = datetime.strptime(adding_year, "%m/%d/%Y")
+        complete_birthday = datetime.strptime(adding_year, "%m/%d/%Y") # returns a bunch of date objects and can sort those objects
         bday = complete_birthday.date()
         # # print("name added: " + (Name) + " birthday added: " + (Birthday))
         print(complete_birthday)   #prints 2020-02-22 00:00:00
@@ -50,9 +51,10 @@ while True:
         new_row = Name, adding_year
         last_index =df.index[-1]
         worksheet.append_row(new_row)
-        print(df)
     else:
         print("invalid input, type in yes or no")
+    df = pd.DataFrame(worksheet.get_all_records())
+
 
 
 organized = df.sort_values(by='Birthday')
@@ -128,3 +130,11 @@ print(organized)
 
 # test adding then sorting the names
 # find a module that can access the windows OS notifications feature
+
+
+
+#list comprehension read into it
+
+# for i in x:              ==========  z = [i+1 for i in x]
+#     y.append(i + 1)
+
