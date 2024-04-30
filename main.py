@@ -56,7 +56,7 @@ while True:
 
 
 organized = df.sort_values(by='Birthday')
-d2g.upload(organized, Birthday_list, Sheet1, credentials=cred,row_names=False)
+d2g.upload(organized, "Birthday_list", worksheet, credentials=cred, row_names=False)
 print("here is the new sorted dataframe")
 print(df)
 
