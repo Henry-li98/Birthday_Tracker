@@ -49,12 +49,12 @@ while True:
         print(bday)                #prints 2020-02-22
 
         new_row = Name, adding_year
-        last_index =df.index[-1]
+        # last_index =df.index[-1]
         worksheet.append_row(new_row)
     else:
         print("invalid input, type in yes or no")
     df = pd.DataFrame(worksheet.get_all_records())
-
+    df = (complete_birthday.df.sort_values(by='%m/%d') for i in df.index())
 #find a way to utilize .sort_values() within teh loop, or maybe out of it nad sort it  before saving the dataframe into google sheets
 
 organized = df.sort_values(by='Birthday')
@@ -80,7 +80,7 @@ print(organized)
 
 # changes entire list into a dictionary list that is now sorted and in a list that can be edited
 
-# used to test if the listed items within the excel sheet actually become a dictionary list to be edited
+# used to test.py if the listed items within the excel sheet actually become a dictionary list to be edited
 # for i in range(len(birthday_list)):
 #     print(birthday_list[i])
 
@@ -128,7 +128,7 @@ print(organized)
 # learn how to use bubblesort to organize the cells that are attached via names and dates and order them sequentially
 
 
-# test adding then sorting the names
+# test.py adding then sorting the names
 # find a module that can access the windows OS notifications feature
 
 
