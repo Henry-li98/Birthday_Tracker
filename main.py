@@ -55,7 +55,7 @@ while True:
         print("invalid input, type in yes or no")
     df = pd.DataFrame(worksheet.get_all_records())
 
-
+#find a way to utilize .sort_values() within teh loop, or maybe out of it nad sort it  before saving the dataframe into google sheets
 
 organized = df.sort_values(by='Birthday')
 # d2g.upload(organized, Birthday_list, worksheet, credentials=cred, row_names=False)
