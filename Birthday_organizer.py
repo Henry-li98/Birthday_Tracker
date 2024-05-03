@@ -15,13 +15,13 @@ worksheet = sheet.worksheet('Sheet1')
 # defs is the keyword used to make a function
 
 def bday_datetime(entry):
-    datetime_entry = datetime.strptime(entry,"%m/%d")
+    datetime_entry = datetime.strptime(entry, "%m/%d")
     return datetime_entry
 def bday_sort(bday_series):
     bday_series.apply(bday_datetime) #alternative is using: lambda entry:datetime.strptime(entry,"%m/%d"))
     print("this is the output of bday series")
     print(bday_series)
-    return sorted(bday_series)
+    return sorted(bday_series, key=datetime)
 
 df = pd.DataFrame(worksheet.get_all_records())
 
