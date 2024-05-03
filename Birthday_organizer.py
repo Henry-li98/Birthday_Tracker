@@ -13,14 +13,15 @@ worksheet = sheet.worksheet('Sheet1')
 # lambda is an instance function
 # usually used when needing to pass a function to another function
 # defs is the keyword used to make a function
+
+def bday_datetime(entry):
+    datetime_entry = datetime.strptime(entry,"%m/%d")
+    return datetime_entry
 def bday_sort(bday_series):
     bday_series.apply(bday_datetime) #alternative is using: lambda entry:datetime.strptime(entry,"%m/%d"))
     print("this is the output of bday series")
     print(bday_series)
     return sorted(bday_series)
-def bday_datetime(entry):
-    datetime_entry = (datetime.strptime(entry,"%m/%d"))
-    return datetime_entry
 
 df = pd.DataFrame(worksheet.get_all_records())
 
