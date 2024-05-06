@@ -1,9 +1,3 @@
-# find a module or library that can read nad write off of google sheets for the birthdays and names
-# create array to hold the birthday date and name (figure out the proper name of what it is
-# use some algorithm that will organize the array by date
-# later use this algo to compare to the current date to determine the next birthday
-# find a module that interacts with windows notification, use it to display the next upcoming birthday thats coming when its within X days
-
 import gspread
 import pandas as pd
 import re
@@ -11,19 +5,25 @@ from df2gspread import df2gspread as d2g
 from oauth2client.service_account import ServiceAccountCredentials
 from datetime import datetime
 
-
-#provides access to the Google sheets and drive in order to be able to interact and manipulate data
 scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
 cred = ServiceAccountCredentials.from_json_keyfile_name('Sheet_access.json', scope)
-
 client = gspread.authorize(cred)
-
 sheet = client.open("Birthday_list")
-
 worksheet = sheet.worksheet('Sheet1')
-
+# lambda is an instance function
+# usually used when needing to pass a function to another function
+# defs is the keyword used to make a function
+# within the def() the () is an argument
+# use functions to streamline and conceptualizes the code
+def bday_datetime(entry):
+    datetime_entry = datetime.strptime(str(entry), "%m/%d")
+    return datetime_entry
+def bday_sort(bday_series):
+    bday_output = bday_series.map(bday_datetime) #alternative is using: lambda entry:datetime.strptime(entry,"%m/%d"))
+    print(f"This is a {bday_output=}")
+    return bday_output
+#sometimes when calling the subfunction of the class itll edit the class and other times it'll jsut spit out a raw value look at documentation on which of these 2 event occurs in the case of line 21 it can change the underlying value but it doesnt
 df = pd.DataFrame(worksheet.get_all_records())
-
 
 while True:
     print(df)
@@ -33,48 +33,34 @@ while True:
         print("no additional data added")
     elif response == 'yes':
 
-        Name = input("enter name of the person ")
-        Birthday = input("enter the birthday date (MM/DD) ")
-        month,day = Birthday.split('/')
-        # birthday_list = df.to_dict(orient='records')
-        print(month)
-        print(day)
-        # append a constant year to the new ones
-        year = 2020
-        adding_year = f"{month}/{day}/{year}"
-        complete_birthday = datetime.strptime(adding_year, "%m/%d/%Y") # returns a bunch of date objects and can sort those objects
-        bday = complete_birthday.date()
-        # # print("name added: " + (Name) + " birthday added: " + (Birthday))
-        print(complete_birthday)   #prints 2020-02-22 00:00:00
-        print(bday)                #prints 2020-02-22
+        name = input("enter name of the person ")
+        birthday = input("enter the birthday date (MM/DD) ")
+        month,day = birthday.split('/')
+        entry_date = f"{int(month):02d}/{int(day):02d}"
+        # entry_datetime = datetime.strptime(entry_date, "%m/%d") # returns a bunch of date objects and can sort those objects
+        # entry_new_row = pd.Series(data=[name, entry_datetime], index=df.columns)
+        df.loc[len(df)] = [name, entry_date]
 
-        new_row = Name, adding_year
-        # last_index =df.index[-1]
-        worksheet.append_row(new_row)
     else:
         print("invalid input, type in yes or no")
-    df = pd.DataFrame(worksheet.get_all_records())
-    df = (complete_birthday.df.sort_values(by='%m/%d') for i in df.index())
-#find a way to utilize .sort_values() within teh loop, or maybe out of it nad sort it  before saving the dataframe into google sheets
 
-organized = df.sort_values(by='Birthday')
-# d2g.upload(organized, Birthday_list, worksheet, credentials=cred, row_names=False)
-print("here is the new sorted dataframe")
-print(organized)
+df_sorted = df.sort_values(by='Birthday', key=bday_sort)
+print(df_sorted)
 
+worksheet.clear()
+worksheet.update([df_sorted.columns.values.tolist()] + df_sorted.values.tolist())
+print(f"{[df_sorted.columns.values.tolist()]=}")
+print(f"{df_sorted.values.tolist()=}")
+print(f"{([df_sorted.columns.values.tolist()] + df_sorted.values.tolist())=}")
+
+# look into how would you might delete or search for a specific person within the list or give everyone within this month
+
+#look into key value pairs and dictionaries
 
 
 
 
 # in order to sort may have to split off the month and day in order to begin sorting
-
-
-
-
-
-
-
-
 
 
 
@@ -88,40 +74,6 @@ print(organized)
 
 # figure out how to get index of the df - does not have be focuesd on  either column as each should both have the same index value
 # compare only the month and day MM/DD and have it be able ot organize both columns
-
-# birthday_dates = df.get_loc(columns[1])
-# the index number of all the entries
-# index_list = df.index.stop
-# print(index_list)
-# n = len(df.index)
-# print(n)
-# print("sorting months by alphabetical order")
-# second_column = df.iloc[:, 1]
-# print(second_column)
-# print(" regex extraction ")
-# date = df["Birthday"].str.extract(r"(\d+/\d*)")
-# print(date)
-
-
-
-
-
-
-
-# def bubblesort():
-#     n = len(df.index)
-#     print(n)
-#     for i in range(n-1):
-#         swapped = False
-#         for j in range(0, n-1-i):
-#             if arr[j] > arr[j+1]:
-#                 arr[j], arr[j+1] = arr[j+1], arr[j]
-#                 swapped = True
-#             if swapped == False:
-#                 break
-#     return(sorted)
-
-# organized = bubblesort()
 
 # learn to use bubble sort for this
 # figure out how to add to the data frames and link both name and date together so when they get changed its moved together
