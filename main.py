@@ -53,8 +53,8 @@ worksheet.update([df_sorted.columns.values.tolist()] + df_sorted.values.tolist()
 # print(f"{df_sorted.values.tolist()=}")
 # print(f"{([df_sorted.columns.values.tolist()] + df_sorted.values.tolist())=}")
 
-
-datetime.strptime(datetime.now(), "%m/%d")
+now = datetime.now()
+current_date = now.strftime("%m/%d")
 print(current_date)
 # look into how would you might delete or search for a specific person within the list or give everyone within this month
 
