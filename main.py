@@ -15,13 +15,7 @@ worksheet = sheet.worksheet('Sheet1')
 # defs is the keyword used to make a function
 # within the def() the () is an argument
 # use functions to streamline and conceptualizes the code
-def bday_datetime(entry):
-    datetime_entry = datetime.strptime(str(entry), "%m/%d")
-    return datetime_entry
-def bday_sort(bday_series):
-    bday_output = bday_series.map(bday_datetime) #alternative is using: lambda entry:datetime.strptime(entry,"%m/%d"))
-    print(f"This is a {bday_output=}")
-    return bday_output
+
 #sometimes when calling the subfunction of the class itll edit the class and other times it'll jsut spit out a raw value look at documentation on which of these 2 event occurs in the case of line 21 it can change the underlying value but it doesnt
 df = pd.DataFrame(worksheet.get_all_records())
 
@@ -45,6 +39,15 @@ while True:
         print("invalid input, type in yes or no")
 
 df_sorted = df.sort_values(by='Birthday', key=bday_sort)
+
+def bday_datetime(entry):
+    datetime_entry = datetime.strptime(str(entry), "%m/%d")
+    return datetime_entry
+def bday_sort(bday_series):
+    bday_output = bday_series.map(bday_datetime) #alternative is using: lambda entry:datetime.strptime(entry,"%m/%d"))
+    print(f"This is a {bday_output=}")
+    return bday_output
+
 print(df_sorted)
 
 worksheet.clear()
@@ -54,7 +57,7 @@ worksheet.update([df_sorted.columns.values.tolist()] + df_sorted.values.tolist()
 # print(f"{([df_sorted.columns.values.tolist()] + df_sorted.values.tolist())=}")
 
 now = datetime.now()
-current_date = now.strftime("%m/%d")
+(current_date) = now.strftime(str("%m/%d"))
 print(current_date)
 
 # with current date and list of organized dates obtained, determine a method on how to look at each entry and determine the next birthday and give a number of days until it occurs
