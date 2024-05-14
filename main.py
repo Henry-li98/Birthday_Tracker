@@ -18,6 +18,13 @@ worksheet = sheet.worksheet('Sheet1')
 
 #sometimes when calling the subfunction of the class itll edit the class and other times it'll jsut spit out a raw value look at documentation on which of these 2 event occurs in the case of line 21 it can change the underlying value but it doesnt
 df = pd.DataFrame(worksheet.get_all_records())
+def bday_datetime(entry):
+    datetime_entry = datetime.strptime(str(entry), "%m/%d")
+    return datetime_entry
+def bday_sort(bday_series):
+    bday_output = bday_series.map(bday_datetime) #alternative is using: lambda entry:datetime.strptime(entry,"%m/%d"))
+    print(f"This is a {bday_output=}")
+    return bday_output
 
 while True:
     print(df)
@@ -39,14 +46,6 @@ while True:
         print("invalid input, type in yes or no")
 
 df_sorted = df.sort_values(by='Birthday', key=bday_sort)
-
-def bday_datetime(entry):
-    datetime_entry = datetime.strptime(str(entry), "%m/%d")
-    return datetime_entry
-def bday_sort(bday_series):
-    bday_output = bday_series.map(bday_datetime) #alternative is using: lambda entry:datetime.strptime(entry,"%m/%d"))
-    print(f"This is a {bday_output=}")
-    return bday_output
 
 print(df_sorted)
 
