@@ -65,6 +65,7 @@ for i in df_sorted:
         i += 1
     elif current_date >= df_sorted:
         print("next birthday is " + name + " in these days")
+        break
 
 
 
