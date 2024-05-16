@@ -23,7 +23,7 @@ def bday_datetime(entry):
     return datetime_entry
 def bday_sort(bday_series):
     bday_output = bday_series.map(bday_datetime) #alternative is using: lambda entry:datetime.strptime(entry,"%m/%d"))
-    print(f"This is a {bday_output=}")
+    # print(f"This is a {bday_output=}")
     return bday_output
 
 while True:
@@ -58,9 +58,9 @@ worksheet.update([df_sorted.columns.values.tolist()] + df_sorted.values.tolist()
 now = datetime.now()
 current_date = now.strftime(str("%m/%d"))
 print(current_date)
-
+print(df_sorted.Birthday)
 # with current date and list of organized dates obtained, determine a method on how to look at each entry and determine the next birthday and give a number of days until it occurs
-for i in len(df_sorted):
+for i in df_sorted:
     if current_date < df_sorted.Birthday:
         i += 1
     elif current_date >= df_sorted:
