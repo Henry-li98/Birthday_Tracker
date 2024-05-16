@@ -60,7 +60,7 @@ current_date = now.strftime(str("%m/%d"))
 print(current_date)
 
 # with current date and list of organized dates obtained, determine a method on how to look at each entry and determine the next birthday and give a number of days until it occurs
-for i in df_sorted:
+for i in len(df_sorted):
     if current_date < df_sorted.Birthday:
         i += 1
     elif current_date >= df_sorted:
