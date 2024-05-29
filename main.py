@@ -62,7 +62,7 @@ print("this is the start of the test loop")
 for birthday in df_sorted.Birthday:
     strptime_date_string = birthday + "/" + str(now.year)
     strptime_format = f"%m/%d/%Y"
-    datetime_birthday = datetime.strptime(birthday + "/" + str(now.year) ,f"%m/%d/%Y" )
+    datetime_birthday = datetime.strptime(strptime_date_string ,strptime_format )
         print(f"next birthday is {i=}")
         break
 
