@@ -56,14 +56,13 @@ worksheet.update([df_sorted.columns.values.tolist()] + df_sorted.values.tolist()
 # print(f"{([df_sorted.columns.values.tolist()] + df_sorted.values.tolist())=}")
 
 now = datetime.now()
-current_date = now.strftime("%m/%d")
-print(current_date)
-print(df_sorted.Birthday)
+# print(df_sorted.Birthday)
 # with current date and list of organized dates obtained, determine a method on how to look at each entry and determine the next birthday and give a number of days until it occurs
 print("this is the start of the test loop")
-for i in df_sorted.Birthday:
-    # print(i)
-    if current_date >= i:
+for birthday in df_sorted.Birthday:
+    strptime_date_string = birthday + "/" + str(now.year)
+    strptime_format = f"%m/%d/%Y"
+    datetime_birthday = datetime.strptime(birthday + "/" + str(now.year) ,f"%m/%d/%Y" )
         print(f"next birthday is {i=}")
         break
 
