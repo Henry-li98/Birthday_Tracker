@@ -63,7 +63,13 @@ for birthday in df_sorted.Birthday:
     strptime_date_string = birthday + "/" + str(now.year)
     strptime_format = f"%m/%d/%Y"
     datetime_birthday = datetime.strptime(strptime_date_string, strptime_format)
-        print(f"next birthday is {i=}")
+    # print(f"{now=}")
+    if now <= datetime_birthday:
+        days_left = datetime_birthday - now
+        name = datetime_Name
+        print(f"{name} is next to have their birthday")
+        print(f"next birthday is {datetime_birthday}")
+        print(f"days left is {days_left.days}")
         break
 
 
