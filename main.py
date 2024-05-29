@@ -58,27 +58,29 @@ worksheet.update([df_sorted.columns.values.tolist()] + df_sorted.values.tolist()
 now = datetime.now()
 # print(df_sorted.Birthday)
 # with current date and list of organized dates obtained, determine a method on how to look at each entry and determine the next birthday and give a number of days until it occurs
-print("this is the start of the test loop")
-df_sorted_dict = df_sorted.to_dict()
-df_names = df_sorted_dict['Name']
-df_birthdays = df_sorted_dict['Birthday']
-print(f"{df_sorted.to_dict()}")
-print(f"{df_names=}")
-print(f"{=df_birthdays}")
-for birthday in df_sorted.Birthday:
-    strptime_date_string = birthday + "/" + str(now.year)
+# print("this is the start of the test loop")
+# df_sorted_dict = df_sorted.to_dict()
+# df_names = df_sorted_dict['Name']
+# df_birthdays = df_sorted_dict['Birthday']
+# print(f"{df_sorted.to_dict(orient='split')}")
+# print(f"{df_names=}")
+# print(f"{df_birthdays=}")
+df_sorted_dict = df_sorted.to_dict(orient='split')
+paired_info = df_sorted_dict['data']
+for pair in paired_info:
+    cur_name = pair[0]
+    cur_date = pair[1]
+
+    strptime_date_string = cur_date + "/" + str(now.year)
     strptime_format = f"%m/%d/%Y"
     datetime_birthday = datetime.strptime(strptime_date_string, strptime_format)
-    # print(f"{now=}")
+
     if now <= datetime_birthday:
         days_left = datetime_birthday - now
-        name = datetime_Name
-        print(f"{name} is next to have their birthday")
-        print(f"{name} birthday is {datetime_birthday}")
-        print(f"days left is {days_left.days}")
+        print(f"In {days_left.days} days, {cur_name} has a birthday happening on {cur_date}")
         break
 
-
+# after the last birthday, the next birthday function wont work until next year, fix this
 
 # look into how would you might delete or search for a specific person within the list or give everyone within this month
 
