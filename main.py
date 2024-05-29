@@ -59,6 +59,7 @@ now = datetime.now()
 # print(df_sorted.Birthday)
 # with current date and list of organized dates obtained, determine a method on how to look at each entry and determine the next birthday and give a number of days until it occurs
 print("this is the start of the test loop")
+print(f"{df_sorted.to_dict()}")
 for birthday in df_sorted.Birthday:
     strptime_date_string = birthday + "/" + str(now.year)
     strptime_format = f"%m/%d/%Y"
@@ -68,7 +69,7 @@ for birthday in df_sorted.Birthday:
         days_left = datetime_birthday - now
         name = datetime_Name
         print(f"{name} is next to have their birthday")
-        print(f"next birthday is {datetime_birthday}")
+        print(f"{name} birthday is {datetime_birthday}")
         print(f"days left is {days_left.days}")
         break
 
