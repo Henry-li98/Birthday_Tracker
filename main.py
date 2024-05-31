@@ -89,28 +89,6 @@ for pair in paired_info:
 # in order to sort may have to split off the month and day in order to begin sorting
 
 
-
-# changes entire list into a dictionary list that is now sorted and in a list that can be edited
-
-# used to test.py if the listed items within the excel sheet actually become a dictionary list to be edited
-# for i in range(len(birthday_list)):
-#     print(birthday_list[i])
-
-
-
-# figure out how to get index of the df - does not have be focuesd on  either column as each should both have the same index value
-# compare only the month and day MM/DD and have it be able ot organize both columns
-
-# learn to use bubble sort for this
-# figure out how to add to the data frames and link both name and date together so when they get changed its moved together
-# learn how to use bubblesort to organize the cells that are attached via names and dates and order them sequentially
-
-
-# test.py adding then sorting the names
-# find a module that can access the windows OS notifications feature
-
-
-
 #list comprehension read into it
 
 # for i in x:              ==========  z = [i+1 for i in x]
