@@ -38,10 +38,8 @@ while True:
         birthday = input("enter the birthday date (MM/DD) ")
         month,day = birthday.split('/')
         entry_date = f"{int(month):02d}/{int(day):02d}"
-        # entry_datetime = datetime.strptime(entry_date, "%m/%d") # returns a bunch of date objects and can sort those objects
-        # entry_new_row = pd.Series(data=[name, entry_datetime], index=df.columns)
         df.loc[len(df)] = [name, entry_date]
-
+        # figure out how exactly above actually made an entry to last index
     else:
         print("invalid input, type in yes or no")
 
