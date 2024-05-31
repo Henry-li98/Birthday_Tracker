@@ -55,7 +55,6 @@ worksheet.update([df_sorted.columns.values.tolist()] + df_sorted.values.tolist()
 
 now = datetime.now()
 # print(df_sorted.Birthday)
-# with current date and list of organized dates obtained, determine a method on how to look at each entry and determine the next birthday and give a number of days until it occurs
 # print("this is the start of the test loop")
 # df_sorted_dict = df_sorted.to_dict()
 # df_names = df_sorted_dict['Name']
